@@ -15,7 +15,10 @@
     "url": "https://github.com/isabelvillaruiz/2018-19-LTAW-practicas.git"
   },
   "scripts": {
-  "start": "node server.js",
-  "test": "node -v"
-}
+    "start": "node server.js",
+    "test": "node -v"
+  },
+  "dependencies": {
+    "router": "^1.3.3"
+  }
 }
