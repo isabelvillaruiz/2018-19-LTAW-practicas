@@ -28,10 +28,6 @@ body{
 	margin: 0px auto;
 	background:url(images/main.jpg) right top no-repeat;}
 
-#header {
-	width:1014px;
-	height: 117px;
-}
 
 #logo {
 		height: 52px;
@@ -40,9 +36,11 @@ body{
 
 #logo H2 {
 
-		font-family: Arial, Helvetica, sans-serif;
-		color:#FFFFFF;
-		font-size:18px;
+		font-family: Courier, monospace;
+		text-align: justify;
+		color: lavender;
+		font-size:50px;
+		font-weight:100;
 		font-style:italic;
 		}
 
@@ -53,11 +51,6 @@ body{
 	color: #FFFFFF;
 }
 
-#logo H2 a{
-	font-size: 12px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight:100;
-}
 
 #buttons{
 	text-align:center;
@@ -384,12 +377,12 @@ padding: 0px 20px 0px 20px;}
 	padding: 0px 87px 0px 0px;}
 
 h2 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size:20px;
-	font-weight: 100;
-	color: #04078E;
-	text-align: left;
-	padding: 0px 0px 0px 0px;
+	font-family: Courier, monospace;
+	text-align: center;
+	color: lavender;
+	font-size:50px;
+	margin-top: 20px;
+	font-style:italic;
 }
 
 
@@ -425,7 +418,7 @@ h2 {
 .gal_num:hover {
 	background:url(images/gal_num_hover.gif) left top no-repeat;
 	text-decoration: none;}
-
+margin-right: 15px;
 .a_blog {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size:20px;
