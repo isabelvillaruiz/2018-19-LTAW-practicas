@@ -12,6 +12,7 @@ http.createServer(function (req, res) {
   var index = "./";
   console.log("filename: " + filename);
 
+
   if ( filename == index) {
     console.log("HE ENTRADO");
     fs.readFile("index.html", function(err,data){
