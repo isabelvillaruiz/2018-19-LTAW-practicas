@@ -11,7 +11,8 @@ const mime = {
   'jpg' : 'image/jpg',
   'js' : 'text/javascript',
   'ico' : 'image/x-icon',
-  '/' : 'text/html'
+  '/' : 'text/html',
+  'mp4' : 'video/mp4'
   }
 //var dt = require('./myfirstmodule');
 

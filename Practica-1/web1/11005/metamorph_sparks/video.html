@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<div style="text-align:center">
+
+
+  <div id="header">
+    <div style="height:20px"></div>
+  <h2>Welcome to the lettering video</h2>
+      </div>
+
+  </head>
+
+  <div id="main">
+  <!-- header begins -->
+
+  <div id="header">
+  	  <div style="height:50px"></div>
+      </div>
+     <div id="buttons">
+        <a href="index.html" class="but_home"  title=""></a><div class="but_razd"></div>
+        <a href="video.html" class="but" title="">Video</a><div class="but_razd"></div>
+        <a href="gallery.html"  class="but" title="">Gallery</a><div class="but_razd"></div>
+      </div>
+  </div>
+
+    	  <div style="height:20px"></div>
+
+  <button onclick="playPause()">Play/Pause</button>
+  <button onclick="makeBig()">Big</button>
+  <br><br>
+
+<video id="video1" poster="images/presentacion.jpg" width="480" height="360" controls >
+    <source href="images/video.mp4" src="images/video.mp4" type="video/mp4" >
+  </video>
+</div>
+
+<script>
+var myVideo = document.getElementById("video1");
+
+function playPause() {
+  if (myVideo.paused)
+    myVideo.play();
+  else
+    myVideo.pause();
+}
+
+function makeBig() {
+    myVideo.width = 560;
+}
+
+
+</body>
+</html>
