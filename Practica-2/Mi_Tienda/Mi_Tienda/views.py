@@ -18,26 +18,16 @@ def my_prod(request,param):
 
 
 
-PLANTILLA = """
+def saludo(request,param):
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
 
-    <p>Bienvenido a mi tienda, {{user}} </p>
+    numero = int(param)
+    print('num: ' + numero)
 
-  </body>
-</html>
+    fp = open('/home/alumnos/ivilla/github/2018-19-LTAW-practicas/Practica-2/Mi_Tienda/Mi_Tienda/test' + numero + '.html');
 
-"""
-
-def saludo(request):
-    t = Template(PLANTILLA)
+    t = Template(fp.read())
+    fp.close()
     c = Context({'user': 'totoro'})
-
     html = t.render(c)
     return HttpResponse(html)
