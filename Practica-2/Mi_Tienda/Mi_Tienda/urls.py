@@ -14,7 +14,18 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from Mi_Tienda.views import my_funct
+from Mi_Tienda.views import my_prod
+from Mi_Tienda.views import saludo
 
+"""Definimos una liksta de url que tiene mi tienda
+    Url de administracion (ejemplo)
+"""
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^saludo/', saludo),
+    url(r'^producto/(\d{1,2})/', my_prod),
+    url(r'^ramen/', my_funct),
+    url(r'^test/', include(admin.site.urls)),
 ]
+
+"""Expresiones regurales :D"""
