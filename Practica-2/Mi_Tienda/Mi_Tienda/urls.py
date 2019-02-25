@@ -22,10 +22,10 @@ from Mi_Tienda.views import saludo
     Url de administracion (ejemplo)
 """
 urlpatterns = [
-    url(r'^saludo/(\d{1,2})/', saludo),
-    url(r'^producto/(\d{1,2})/', my_prod),
+    url(r'^saludo/', saludo),
     url(r'^ramen/', my_funct),
     url(r'^test/', include(admin.site.urls)),
 ]
 
-"""Expresiones regurales :D"""
+"""Expresiones regurales :D
+url(r'^producto/(\d{1,2})/', my_prod),"""
