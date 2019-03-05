@@ -1,7 +1,8 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <body>
-<link href="styles.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="{% static 'styles.css'%}">
 <div style="text-align:center">
 
 
@@ -19,9 +20,8 @@
   	  <div style="height:50px"></div>
       </div>
      <div id="buttons">
-        <a href="index.html" class="but_home"  title=""></a><div class="but_razd"></div>
-        <a href="video.html" class="but" title="">Video</a><div class="but_razd"></div>
-        <a href="gallery.html"  class="but" title="">Gallery</a><div class="but_razd"></div>
+        <a href="/" class="but_home"  title="">Inicio</a>
+        <a href="/gallery"  class="but" title="">Gallery</a>
       </div>
   </div>
 
@@ -31,8 +31,8 @@
   <button onclick="makeBig()">Big</button>
   <br><br>
 
-<video id="video1" poster="images/presentacion.jpg" width="480" height="360" controls >
-    <source href="images/video.mp4" src="images/video.mp4" type="video/mp4" >
+<video id="video1" poster="/static/images/presentacion.jpg" width="480" height="360" controls >
+    <source  src="/static/videos/video.mp4" type="video/mp4" >
   </video>
 </div>
 
