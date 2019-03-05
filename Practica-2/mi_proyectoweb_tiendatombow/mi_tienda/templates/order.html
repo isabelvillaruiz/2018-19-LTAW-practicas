@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<title> YOUR ORDER</title>
+<meta name="description" content="" />
+<link rel="stylesheet" href="{% static 'styles.css'%}">
+
+<!-- Pirobox setup and styles end-->
+
+<div id="header">
+<h2>SELECT YOUR TOMBOW!</h2>
+    </div>
+
+</head>
+<body>
+
+<h2> Pedido online! </h2>
+
+
+<form action="/action_page.php">
+  Quantity:
+  <input type="number" name="quantity"
+   min="0" max="100" step="10" value="30">
+  <input type="submit">
+</form>
+
+<p><b>Note:</b>type="number" is not supported in IE9 and earlier.
+</p>
+
+</body>
+</html>
