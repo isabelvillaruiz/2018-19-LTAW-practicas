@@ -16,6 +16,9 @@ def gallery_view (request):
 def video_view (request):
     return render(request, "video.html", {})
 
+def order_view (request):
+    return render(request, "order.html", {})
+
 def list(request):
     objects = Product.objects.all()
     html = "<p>Listado de articulos</p>"
