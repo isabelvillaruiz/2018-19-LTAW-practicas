@@ -21,6 +21,7 @@
       <a href="index.html" class="but_home"  title=""></a><div class="but_razd"></div>
       <a href="video.html" class="but" title="">Video</a><div class="but_razd"></div>
       <a href="gallery.html"  class="but" title="">Gallery</a><div class="but_razd"></div>
+			<a onclick="alertfunction()" href="login"class="but" title=""> LOGIN </a><div class="but_razd"></div>
     </div>
 </div>
 <!-- header ends -->
@@ -35,7 +36,13 @@
 </ul>
 <script type="text/javascript" src="lib/jquery.js"></script>
 <script type="text/javascript" src="lib/jquery.roundabout.js"></script>
+<script>
+function alertfunction() {
+  alert("Hi Isabel, You are loged!");
+}
+</script>
 <script type="text/javascript">
+
 
 			$(document).ready(function() {
 				$('.round').roundabout();

@@ -23,14 +23,46 @@ http.createServer(function (req, res) {
   var q = url.parse(req.url, true);
   var filename = "." + q.pathname;
   var index = "./";
-  console.log("filename: " + filename);
+  console.log("filename:" + filename);
   var ext = filename.split(".").slice(-1)[0];
   console.log("ext:" + ext);
   var mime_content = mime[ext];
   console.log("mime_content: " +  mime_content);
 
 
-  if ( filename == index) {
+  //-- Leer las cookies
+  var cookie = req.headers.cookie;
+  console.log("Cookie: " + cookie)
+
+  if ( filename == "./login"){
+      console.log("He entrado al loooogin");
+
+      //-- ESTABLECER LA COOKIE!!
+      res.setHeader('Set-Cookie', 'user=Isabel')
+
+      console.log("Isabel registrada!");
+
+
+    fs.readFile("index.html", function(err,data){
+      // if (err) {
+      //   console.log( "err" + err);
+      //   res.writeHead(404, {'Content-Type': 'text/html'});
+      //   return res.end("404 Not Found");
+      // }
+      res.writeHead(200, {'Content-Type': 'text/html'});
+      //res.write("The date and time are currently: " + dt.myDateTime() + "\n\n");
+      //res.end('Hello Kaamoo!');
+      res.write(data);
+      return res.end();
+
+
+
+      });
+
+  //-- Se intenta acceder a un recurso que no existe
+
+
+  }else if ( filename == index) {
     fs.readFile("index.html", function(err,data){
       // if (err) {
       //   console.log( "err" + err);
@@ -44,6 +76,7 @@ http.createServer(function (req, res) {
       return res.end();
       console.log("Peticion atendida")
     });
+
   }else{
     fs.readFile(filename, function(err,data){
       if (err) {
