@@ -29,18 +29,18 @@ http.createServer(function (req, res) {
     });
   }else{
     fs.readFile(filename, function(err,data){
-      console.log("data" + data);
-      if (err) {
-        console.log( "err" + err);
-        res.writeHead(404, {'Content-Type': 'text/html'});
-        return res.end("404 Not Found");
-      }
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      //res.write("The date and time are currently: " + dt.myDateTime() + "\n\n");
-      //res.end('Hello Kaamoo!');
-      res.write(data);
-      return res.end();
-      console.log("Peticion atendida")
+        console.log("data" + data);
+        if (err) {
+          console.log( "err" + err);
+          res.writeHead(404, {'Content-Type': 'text/html'});
+          return res.end("404 Not Found");
+        }
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        //res.write("The date and time are currently: " + dt.myDateTime() + "\n\n");
+        //res.end('Hello Kaamoo!');
+        res.write(data);
+        return res.end();
+        console.log("Peticion atendida")
     });
   }
 }).listen(8080);
