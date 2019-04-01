@@ -19,6 +19,7 @@
     "test": "node -v"
   },
   "dependencies": {
+    "express": "^4.16.4",
     "router": "^1.3.3"
   }
 }
