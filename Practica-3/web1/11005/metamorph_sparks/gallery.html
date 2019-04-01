@@ -26,9 +26,11 @@
 	  <div style="height:40px"></div>
     </div>
    <div id="buttons">
-      <a href="index.html" class="but_home"  title=""></a><div class="but_razd"></div>
-      <a href="video.html" class="but" title="">Video</a><div class="but_razd"></div>
-      <a href="gallery.html"  class="but" title="">Gallery</a><div class="but_razd"></div>
+     <a href="index.html" class="but_home"  title=""></a><div class="but_razd"></div>
+     <a href="video.html" class="but" title="">Video</a><div class="but_razd"></div>
+     <a href="gallery.html"  class="but" title="">Gallery</a><div class="but_razd"></div>
+    <a onclick="alertfunction()" href="login"class="but" title=""> LOGIN </a><div class="but_razd"></div>
+    <a href="carrito.html"  class="but" title="">Carrito</a><div class="but_razd"></div>
     </div>
 </div>
 <!-- header ends -->
@@ -37,19 +39,22 @@
        			<div id="content">
                 	<div class="row">
                    	  <div class="box_img2">
-												<h1> 2.50 € </h1>
+												<h1> 2.50 € <input type="text" id="item1" value=0 class=field>
+                        <button type="button" onclick="add(item1)">+</button></h1>
                            <a href="images/IMG1.jpg"  class="pirobox_gal1" title="1st Project Image"> <img src="images/IMG1.jpg" alt="" width="310" height="310" /></a>
                        	<div style="height:40px"></div>
                       </div>
 
                       <div class="box_img2">
-												<h1> 2.50 € </h1>
+                        <h1> 2.50 € <input type="text" id="item2" value=0 class=field>
+                        <button type="button" onclick="add(item2)">+</button></h1>
                         <a href="images/IMG2.jpg" class="pirobox_gal1" title="2nd Project Image"><img src="images/IMG2.jpg" alt="" width="310" height="310" /></a>
                           	<div style="height:40px"></div>
                          </div>º
 
                       <div class="box_img2">
-												<h1> 2.50 € </h1>
+                        <h1> 2.50 € <input type="text" id="item3" value=0 class=field>
+                        <button type="button" onclick="add(item3)">+</button></h1>
                         <a href="images/IMG3.jpg" class="pirobox_gal1"  title="3rd Project Image"><img src="images/IMG3.jpg" alt="" width="310" height="310" /></a>
                           	<div style="height:40px"></div>
                    	  </div>
@@ -59,19 +64,22 @@
 
                     <div class="row">
                    	  <div class="box_img2">
-												<h1> 2.50 € </h1>
+                        <h1> 2.50 € <input type="text" id="item4" value=0 class=field>
+                        <button type="button" onclick="add(item4)">+</button></h1>
                             <a href="images/IMG4.jpg" class="pirobox_gal1" title="4th Project Image"><img src="images/IMG4.jpg" alt="" width="310" height="310"/></a>
                        	<div style="height:40px"></div>
                         </div>
 
                       <div class="box_img2">
-												<h1> 2.50 € </h1>
+                        <h1> 2.50 € <input type="text" id="item5" value=0 class=field>
+                        <button type="button" onclick="add(item5)">+</button></h1>
                         <a href="images/IMG5.jpg" class="pirobox_gal1" title="5th Project Image"><img src="images/IMG5.jpg" alt="" width="310" height="310"/></a>
                           	<div style="height:40px"></div>
                         </div>
 
                       <div class="box_img2">
-												<h1> 2.50 € </h1>
+                        <h1> 2.50 € <input type="text" id="item6" value=0 class=field>
+                        <button type="button" onclick="add(item6)">+</button></h1>
                         <a href="images/IMG6.jpg" class="pirobox_gal1" title="6th Project Image"><img src="images/IMG6.jpg" alt="" width="310" height="310"/></a>
                           	<div style="height:40px"></div>
                         </div>
@@ -79,43 +87,58 @@
                   	</div>
 										<div class="row">
 											<div class="box_img2">
-												<h1> 2.50 € </h1>
+                        <h1> 2.50 € <input type="text" id="item7" value=0 class=field>
+                        <button type="button" onclick="add(item7)">+</button></h1>
 														<a href="images/IMG7.jpg" class="pirobox_gal1" title="7th Project Image"><img src="images/IMG7.jpg" alt="" width="310" height="310"/></a>
 												<div style="height:70px"></div>
 												</div>
 
 											<div class="box_img2">
-												<h1> 2.50 € </h1>
+                        <h1> 2.50 € <input type="text" id="item8" value=0 class=field>
+                        <button type="button" onclick="add(item8)">+</button></h1>
 												<a href="images/IMG8.jpg" class="pirobox_gal1" title="8th Project Image"><img src="images/IMG8.jpg" alt="" width="310" height="310"/></a>
 														<div style="height:40px"></div>
 												</div>
 
 											<div class="box_img2">
-												<h1> 2.50 € </h1>
+                        <h1> 2.50 € <input type="text" id="item9" value=0 class=field>
+                        <button type="button" onclick="add(item9)">+</button></h1>
 												<a href="images/IMG9.jpg" class="pirobox_gal1" title="9th Project Image"><img src="images/IMG9.jpg" alt="" width="310" height="310"/></a>
 														<div style="height:40px"></div>
 												</div>
 
 												<div class="box_img2">
-													<h1> 2.50 € </h1>
+                          <h1> 2.50 € <input type="text" id="item10" value=0 class=field>
+                          <button type="button" onclick="add(item10)">+</button></h1>
 													<a href="images/IMG10.jpg" class="pirobox_gal1" title="10th Project Image"><img src="images/IMG10.jpg" alt="" width="310" height="310"/></a>
 															<div style="height:40px"></div>
 													</div>
 
 													<div class="box_img2">
-														<h1> 2.50 € </h1>
+                            <h1> 2.50 € <input type="text" id="item11" value=0 class=field>
+                            <button type="button" onclick="add(item11)">+</button></h1>
 														<a href="images/IMG11.jpg" class="pirobox_gal1" title="11th Project Image"><img src="images/IMG11.jpg" alt="" width="310" height="310"/></a>
 																<div style="height:40px"></div>
 														</div>
 														<div class="box_img2">
-															<h1> 2.50 € </h1>
+                              <h1> 2.50 € <input type="text" id="item12" value=0 class=field>
+                              <button type="button" onclick="add(item12)">+</button></h1>
 															<a href="images/IMG12.jpg" class="pirobox_gal1" title="12th Project Image"><img src="images/IMG12.jpg" alt="" width="310" height="310"/></a>
 																	<div style="height:40px"></div>
 															</div>
 										</div>
 
 </div>
+
+<script>
+function add(item){
+  console.log(item.id);
+  document.getElementById(item.id).value = Number(document.getElementById(item.id).value) + 1;
+}
+</script>
 </div>
+
+
 
 
 </html>
