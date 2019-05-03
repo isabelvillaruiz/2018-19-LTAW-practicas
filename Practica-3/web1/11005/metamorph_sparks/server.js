@@ -60,7 +60,99 @@ http.createServer(function (req, res) {
       });
 
   //-- Se intenta acceder a un recurso que no existe
+  //-- Pagina de acceso
+}else if ( filename == "./myform" ) {
+    console.log("HOLA CARACOLA______________________________________________");
 
+       if (req.method === 'POST') {
+         // Handle post info...
+
+
+         //Comienzo de tratar los datos de la cookies
+         cookie_splitted = cookie.split(/[=;\s]+/);
+         console.log("COOKIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEES:");
+         console.log(cookie_splitted);
+
+         cookie_splitted_items = cookie.split(/[item]+/);
+
+         cookie_splitted_items.pop();
+         console.log("ITEMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+         console.log(cookie_splitted_items);
+
+         cookie_splitted_items_string = cookie_splitted_items.join(",");
+         console.log("El string definitivo" + cookie_splitted_items_string);
+
+         n_amarillo = cookie_splitted_items_string.search(/d[1]/);
+         console.log("amarillos(1) : " + n_amarillo);
+
+
+
+
+         //Final de tratar los datos de la cookie.
+
+
+         var content = `
+         <!DOCTYPE html>
+         <html lang="es">
+         <link href="styles.css" rel="stylesheet" type="text/css" />
+           <head>
+             <meta charset="utf-8">
+             <title>FORM 1</title>
+           </head>
+           <body>
+             <h4>Recibido: `
+
+         req.on('data', chunk => {
+             //-- Leer los datos (convertir el buffer a cadena)
+             data = chunk.toString();
+             console.log("Dataaaaaaaaaaaaaaaaaaa: " + data);
+
+
+             //Vamos a desglosar el resultado del formulario.
+             data_splitted = data.split(/[=&+]+/);
+             console.log("data_splitted:________" + data_splitted);
+
+             var email_crash = data_splitted[5].includes("%40");
+
+
+             if (email_crash) {
+               email = data_splitted[5].replace("%40","@");
+             } else {
+               email = data_splitted[5];
+             }
+
+             pay_method = data_splitted[7].replace("_"," ");
+
+             msg = "Mr/Mrs " + data_splitted[1] + " " + data_splitted[3] +
+                    " thank'u for choosing Tombow Shop. You choose " +
+                    pay_method + " to pay the order." +
+                    "We are going to send u a e-mail to " + email
+                    + " with your bill."
+
+             //-- Añadir los datos a la respuesta
+             content += msg;
+
+
+            //-- Fin del mensaje. Enlace al formulario
+            content += `
+                </h4>
+                <a href="/">[PáginaPrincipal]</a>
+              </body>
+            </html>
+            `
+             //-- Mostrar los datos en la consola del servidor
+             console.log("Datos recibidos: " + msg)
+             res.statusCode = 200;
+          });
+
+          req.on('end', ()=> {
+            //-- Generar el mensaje de respuesta
+            res.setHeader('Content-Type', 'text/html')
+            res.write(content);
+            res.end();
+          })
+          return
+       }
 
   }else if ( filename == index) {
     fs.readFile("index.html", function(err,data){

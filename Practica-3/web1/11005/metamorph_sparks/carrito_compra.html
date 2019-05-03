@@ -34,20 +34,20 @@
   <h1> Completa los datos y dale a enviar! </h1>
 
 
-<form method="post">
-  <h3> Nombre: </h3>
+<form action="/myform" method="post">
+  <h3> Name: </h3>
   <input name='user_name' placeholder='Your name please' type='text' width="20px">
-  <h3> Apellidos: </h3>
+  <h3> Lastname: </h3>
   <input name='user_lastname' placeholder='Your lastname please' type='text'>
   <h3> E-mail: </h3>
   <input name='user_email' placeholder='A contact email' type='text'>
-  <h3> Selecciona metodo de pago: </h3>
+  <h3> Select the payment method </h3>
   <select  name='subject'>
     <br><br>
-    <h1> Método de Pago </h1>
-    <option selected=''>Tarjeta de Credito/Debito</option>
+    <h1> Payment method </h1>
+    <option selected=''>Credit_Card</option>
     <option>Paypal</option>
-    <option>Efectivo</option>
+    <option>Bank_Transfer</option>
   </select>
   <br><br>
   <input type='submit' value='Send Message'>
