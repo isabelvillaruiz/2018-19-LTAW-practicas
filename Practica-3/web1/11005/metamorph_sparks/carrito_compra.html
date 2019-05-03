@@ -2,7 +2,10 @@
 <html>
 <body>
 <link href="styles.css" rel="stylesheet" type="text/css" />
+<title> CARRITO</title>
+<link href='images/ICONO.ico' rel='shortcut icon' type='image/png'/>
 <div style="text-align:center">
+
 
 
   <div id="header">
@@ -15,20 +18,42 @@
   <!-- header begins -->
 
   <div id="header">
-  	  <div style="height:50px"></div>
+  	  <div style="height:20px"></div>
       </div>
      <div id="buttons">
        <a href="index.html" class="but_home"  title=""></a><div class="but_razd"></div>
        <a href="video.html" class="but" title="">Video</a><div class="but_razd"></div>
        <a href="gallery.html"  class="but" title="">Gallery</a><div class="but_razd"></div>
- 			<a onclick="alertfunction()" href="login"class="but" title=""> LOGIN </a><div class="but_razd"></div>
- 			<a href="carrito_compra.html"  class="but" title="">Carrito</a><div class="but_razd"></div>
+ 			 <a onclick="alertfunction()" href="login"class="but" title=""> LOGIN </a><div class="but_razd"></div>
+ 			 <a href="carrito_compra.html"  class="but" title="">Carrito</a><div class="but_razd"></div>
       </div>
   </div>
 
-    	  <div style="height:20px"></div>
-
+    	  <div style="height:10px"></div>
   <br><br>
+  <h1> Completa los datos y dale a enviar! </h1>
+
+
+<form method="post">
+  <h3> Nombre: </h3>
+  <input name='user_name' placeholder='Your name please' type='text' width="20px">
+  <h3> Apellidos: </h3>
+  <input name='user_lastname' placeholder='Your lastname please' type='text'>
+  <h3> E-mail: </h3>
+  <input name='user_email' placeholder='A contact email' type='text'>
+  <h3> Selecciona metodo de pago: </h3>
+  <select  name='subject'>
+    <br><br>
+    <h1> Método de Pago </h1>
+    <option selected=''>Tarjeta de Credito/Debito</option>
+    <option>Paypal</option>
+    <option>Efectivo</option>
+  </select>
+  <br><br>
+  <input type='submit' value='Send Message'>
+</form>
+
+
 
 </div>
 

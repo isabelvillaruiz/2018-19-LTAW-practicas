@@ -23,6 +23,7 @@ body{
 }
 
 
+
 #main {
 	width: 1014px;
 	margin: 0px auto;
@@ -56,11 +57,22 @@ button {
   margin: 4px;
   cursor: pointer;
 }
+
+
 input {
-  text-align: center;
-  width: 40px;
-  margin: 4px;
-  color: salmon;
+	text-align: center;
+	width: 200px;
+	height: 30px;
+	margin: 4px;
+	color: salmon;
+}
+
+select{
+	text-align: center;
+	width: 200px;
+	height: 30px;
+	margin: 4px;
+	color: salmon;
 }
 
 #buttons{
@@ -187,7 +199,7 @@ padding: 0px 20px 0px 20px;}
  H1{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size:20px;
-	font-weight: 100;
+	font-weight: 50;
 	color: #04778E;
 	text-align: left;
 	padding: 10px 0px 0px 0px;
@@ -406,10 +418,23 @@ h2 {
 h1 {
 	font-family: Courier, monospace;
 	text-align: center;
-	color: palevioletred;
-	font-size:50px;
+	color: peachpuff;
+	font-size:20px;
 	margin-top: 20px;
 	font-style:italic;
+}
+
+h3{
+	font-family: Courier, monospace;
+	text-align: center;
+	color: Black;
+	font-size:20px;
+	margin-top: 20px;
+	font-style:italic;
+
+
+
+
 }
 
 
