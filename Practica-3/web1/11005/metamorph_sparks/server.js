@@ -19,6 +19,21 @@ const mime = {
 
 console.log("Arrancando servidor...")
 
+
+function count_products(number, array) {
+
+  var count = 0;
+  for (var i = 0; i < array.length; i++) {
+    var num_to_com = array[i].trim()
+    //console.log(number + "vs" + num_to_com);
+    if (number == num_to_com) {
+      count = count + 1;
+    }
+  }
+
+  return count;
+}
+
 http.createServer(function (req, res) {
   var q = url.parse(req.url, true);
   var filename = "." + q.pathname;
@@ -70,22 +85,44 @@ http.createServer(function (req, res) {
 
          //Comienzo de tratar los datos de la cookies
          cookie_splitted = cookie.split(/[=;\s]+/);
-         console.log("COOKIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEES:");
-         console.log(cookie_splitted);
 
          cookie_splitted_items = cookie.split(/[item]+/);
 
+         console.log("Items: " + cookie_splitted_items);
+
+         var Total_Products = cookie_splitted_items[cookie_splitted_items.length - 1].split("al:")[1];
+         console.log(Total_Products);
+
+
          cookie_splitted_items.pop();
-         console.log("ITEMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
-         console.log(cookie_splitted_items);
 
-         cookie_splitted_items_string = cookie_splitted_items.join(",");
-         console.log("El string definitivo" + cookie_splitted_items_string);
+         yellow_markers = count_products("1",cookie_splitted_items);
+         console.log("yellow_markers: " + yellow_markers);
 
-         n_amarillo = cookie_splitted_items_string.search(/d[1]/);
-         console.log("amarillos(1) : " + n_amarillo);
+         red_markers = count_products("2",cookie_splitted_items);
+         console.log("red_markers: " + red_markers);
+
+         pink_markers = count_products("3",cookie_splitted_items);
+         console.log("pink_markers: " + pink_markers);
+
+         violet_markers = count_products("4",cookie_splitted_items);
+         console.log("violet_markers: " + violet_markers);
+
+         blue_markers = count_products("5",cookie_splitted_items);
+         console.log("blue_markers: " + blue_markers);
+
+         green_markers = count_products("6",cookie_splitted_items);
+         console.log("green_markers: " + green_markers);
 
 
+         products_msg = "You bought: " + "<br><br>" +
+                        + yellow_markers + " yellow_markers" + "<br><br>" +
+                        + red_markers + " red_markers" + "<br><br>" +
+                        + pink_markers + " pink_markers" + "<br><br>" +
+                        + violet_markers + " violet_markers" + "<br><br>" +
+                        + blue_markers + " blue_markers" + "<br><br>" +
+                        + green_markers + " green_markers" + "<br><br>" +
+                        " in total: " + Total_Products;
 
 
          //Final de tratar los datos de la cookie.
@@ -131,6 +168,7 @@ http.createServer(function (req, res) {
 
              //-- Añadir los datos a la respuesta
              content += msg;
+             content += products_msg;
 
 
             //-- Fin del mensaje. Enlace al formulario
