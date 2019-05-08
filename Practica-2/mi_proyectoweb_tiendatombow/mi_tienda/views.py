@@ -42,9 +42,10 @@ def order_view (request):
         if form.is_valid():
             products = Product.objects.all()
             print(products)
-            data = form.cleaned_data
-            order_to_save = Order(Name=data['Name'], Address=data['Address'], Mail=data['Mail'], Wishes=data['Wishes'])
-            order_to_save.save()
+            #data = form.cleaned_data
+            #order_to_save = Order(Name=data['Name'], Address=data['Address'], Mail=data['Mail'], Wishes=data['Wishes'])
+            form.save()
+
             return HttpResponse('<p>Your order has been placed.</p><a href="../">Return to main page</a>')
     else:
         form = OrderForm()
@@ -55,11 +56,20 @@ def list(request):
 
 
     products_to_show = []
+    orders_to_show = []
     html = "<h1>Listado de articulos</h1>"
     objects = Product.objects.all()
+    orders = Order.objects.all()
 
     for object in objects:
         products_to_show.append(object)
+        print(type(object))
         print("Hola");
 
-    return render(request,'list.html',{'prod_list':products_to_show})
+    for order in orders:
+
+        #msg = order.Name + " " + order.Address + " " + order.Mail + " " + order.Wishes
+        orders_to_show.append(order)
+        #print("Mensaje" + msg);
+
+    return render(request,'list.html',{'prod_list':products_to_show},{'ord_list': orders_to_show})
