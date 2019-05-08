@@ -68,8 +68,8 @@ def list(request):
 
     for order in orders:
 
-        #msg = order.Name + " " + order.Address + " " + order.Mail + " " + order.Wishes
-        orders_to_show.append(order)
-        #print("Mensaje" + msg);
+        msg = order.Name + " " + order.Address + " " + order.Mail + " " + order.Wishes
+        orders_to_show.append(msg);
+        print("Mensaje" + msg);
 
     return render(request,'list.html',{'prod_list':products_to_show},{'ord_list': orders_to_show})
