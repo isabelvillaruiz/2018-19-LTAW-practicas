@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
 from mi_tienda.models import Product
+from mi_tienda.models import Order
+
+from mi_tienda.forms import OrderForm
 
 
 PLANTILLA_LIST = """
@@ -32,20 +36,30 @@ def video_view (request):
     return render(request, "video.html", {})
 
 def order_view (request):
-    return render(request, "order.html", {})
+    if request.method == 'POST':
+        print("He entrado al POST")
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            products = Product.objects.all()
+            print(products)
+            data = form.cleaned_data
+            order_to_save = Order(Name=data['Name'], Address=data['Address'], Mail=data['Mail'], Wishes=data['Wishes'])
+            order_to_save.save()
+            return HttpResponse('<p>Your order has been placed.</p><a href="../">Return to main page</a>')
+    else:
+        form = OrderForm()
+        print("Holaa")
+    return render(request,'order.html',{"form":form})
 
 def list(request):
 
 
     products_to_show = []
+    html = "<h1>Listado de articulos</h1>"
     objects = Product.objects.all()
 
-    for elt in objects:
-        products_to_show.append(elt)
+    for object in objects:
+        products_to_show.append(object)
+        print("Hola");
 
     return render(request,'list.html',{'prod_list':products_to_show})
-
-
-    # -- Obtener la pagina html final
-    html = t.render(c)
-    return HttpResponse(html)

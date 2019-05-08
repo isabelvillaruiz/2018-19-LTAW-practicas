@@ -32,32 +32,12 @@
     </div>
 </div>
 
+<form action ="" method="POST"> 
 
+  {% csrf_token %}
+  {{form.as_p}}
+  <input type="submit" value="Enviar"></input>
 
-<div style="height:30px"></div>
-
-<h1> Select the colour </h1>
-<form action="/action_page.php">
-  <select name="cars" size="3">
-    <option value="Yellow">GREY GREEN</option>
-    <option value="Orange">ORANGE</option>
-    <option value="Red">LIGHT OLIVE</option>
-    <option value="Pink">MIST PURPLE</option>
-    <option value="757">PORT RED</option>
-    <option value="856">CHINESE RED</option>
-  </select>
-  <br><br>
-
-</form>
-
-<div style="height:30px"></div>
-
-<h1> Select how many</h1>
-<form action="/action_page.php">
-  Quantity:
-  <input type="number" name="quantity"
-   min="0" max="10">
-  <input type="submit">
 </form>
 
 

@@ -25,6 +25,7 @@ form{
 	line-height: 20px;
 }
 
+
 #main {
 	width: 1014px;
 	margin: 0px auto;
@@ -378,6 +379,24 @@ h2 {
 	margin-top: 20px;
 	font-style:italic;
 }
+
+
+li {
+	font-family: Courier, monospace;
+	text-align: center;
+	text-decoration: overline;
+	text-decoration: underline;
+	color: lightpink;
+	font-size:20px;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-style:italic;
+}
+
+
+
+
 
 h1 {
 	font-family: Courier, monospace;
