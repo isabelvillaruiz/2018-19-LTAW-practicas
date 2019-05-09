@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css'%}">
+        <script src="{% static 'mi-js.js' %}"></script>
+        <title>Bienvenido a la tienda de xiaomi</title>
+    </head>
+
+    <div id="header">
+    <h2> These are the orders that our ddbb have:</h2>
+        </div>
+
+    </head>
+
+    <div id="main">
+    <!-- header begins -->
+
+    <div id="header">
+    	  <div style="height:50px"></div>
+        </div>
+       <div id="buttons">
+         <a href="/"  class="but" title="">Inicio</a>
+         <a href="/video" class="but" title="">Video</a>
+         <a href="/order"  class="but" title=""> Make an Order</a>
+        </div>
+    </div>
+
+    <body onload="main();" text-align: center;>
+        <ul>
+            {% for msg in ord_list %}
+                <li>{{ msg.name }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

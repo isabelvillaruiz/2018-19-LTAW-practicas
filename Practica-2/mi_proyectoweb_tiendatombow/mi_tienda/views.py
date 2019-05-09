@@ -52,11 +52,27 @@ def order_view (request):
         print("Holaa")
     return render(request,'order.html',{"form":form})
 
+
+def ddbb(request):
+
+    orders_to_show = []
+    html = "<h1>Listado de Pedidos</h1>"
+    orders = Order.objects.all()
+
+    for order in orders:
+
+        msg = order.Name + " " + order.Address + " " + order.Mail + " " + order.Wishes
+        orders_to_show.append(msg);
+        print("Mensaje" + msg);
+
+    return render(request,'ddbb.html',{'ord_list':orders_to_show})
+
+
+
 def list(request):
 
 
     products_to_show = []
-    orders_to_show = []
     html = "<h1>Listado de articulos</h1>"
     objects = Product.objects.all()
     orders = Order.objects.all()
@@ -66,10 +82,28 @@ def list(request):
         print(type(object))
         print("Hola");
 
-    for order in orders:
+    return render(request,'list.html',{'prod_list':products_to_show})
 
-        msg = order.Name + " " + order.Address + " " + order.Mail + " " + order.Wishes
-        orders_to_show.append(msg);
-        print("Mensaje" + msg);
 
-    return render(request,'list.html',{'prod_list':products_to_show},{'ord_list': orders_to_show})
+def results(request):
+
+
+    print("hola")
+    item_to_find = request.GET.get('Item_Tombow',None)
+    products_to_show = []
+    html = "<h1>Listado de productos buscados</h1>"
+    objects = Product.objects.all()
+
+    for object in objects:
+        print("Hola")
+        print("Rotu: " + object.name)
+        print("Input: " + str(item_to_find))
+        #producto_database = producto.name
+        if item_to_find == object.name:
+            print("Rotu" + object.name)
+            products_to_show.append(item_to_find)
+            products_to_show.append(object.stock)
+            print(products_to_show)
+    #print(Peticion de productos)
+
+    return render(request, 'results.html',{'ord_list':products_to_show})
