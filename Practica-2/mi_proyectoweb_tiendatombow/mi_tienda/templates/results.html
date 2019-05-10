@@ -29,8 +29,8 @@
 
     <body onload="main();" text-align: center;>
         <ul>
-            {% for order in ord_list %}
-                <li>{{ order }}</li>
+            {% for msg in ord_list %}
+                <li>{{ msg.name }} {{ msg.stock }} {{ msg.price }}</li>
             {% endfor %}
         </ul>
     </body>

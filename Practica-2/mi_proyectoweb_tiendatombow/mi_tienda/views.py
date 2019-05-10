@@ -61,9 +61,9 @@ def ddbb(request):
 
     for order in orders:
 
-        msg = order.Name + " " + order.Address + " " + order.Mail + " " + order.Wishes
-        orders_to_show.append(msg);
-        print("Mensaje" + msg);
+        #msg = order.Name + " " + order.Address + " " + order.Mail + " " + order.Wishes
+        orders_to_show.append(order);
+        #print("Mensaje" + msg);
 
     return render(request,'ddbb.html',{'ord_list':orders_to_show})
 
@@ -75,7 +75,6 @@ def list(request):
     products_to_show = []
     html = "<h1>Listado de articulos</h1>"
     objects = Product.objects.all()
-    orders = Order.objects.all()
 
     for object in objects:
         products_to_show.append(object)
@@ -101,8 +100,7 @@ def results(request):
         #producto_database = producto.name
         if item_to_find == object.name:
             print("Rotu" + object.name)
-            products_to_show.append(item_to_find)
-            products_to_show.append(object.stock)
+            products_to_show.append(object)
             print(products_to_show)
     #print(Peticion de productos)
 
