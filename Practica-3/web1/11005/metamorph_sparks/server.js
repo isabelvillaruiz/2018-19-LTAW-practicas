@@ -3,6 +3,8 @@ var fs = require('fs');
 var url = require('url');
 var n = 1;
 
+var Products_ddbb = ["amarillo", "naranja", "rosa", "rosa-Morado" , "verde-azul", "verde"];
+
 const mime = {
 
   'html' : 'text/html',
@@ -206,6 +208,48 @@ http.createServer(function (req, res) {
       return res.end();
       console.log("Peticion atendida")
     });
+
+  }else if ( filename == "./myquery") {
+
+    console.log("He entrado al server");
+    //-- Contenido en formato JSON
+    //-- Es lo que se va a devolver en la petición
+    // content = `
+    // {
+    // "productos": ["amarillo", "naranja", "rosa", "rosa-Morado" , "verde-Azul", "verde"]
+    // }
+    // `
+
+    //-- Leer los parámetros recibidos en la peticion
+    var letters_to_find = q.query;
+
+    console.log(typeof(letters_to_find.param1));
+
+    //-- Aqui voy a buscar en mi "array" que actua como base de datos, las letras que me envia la peticion client_ajax
+    console.log("Parametros: " +letters_to_find.param1);
+
+
+    var found =  [];
+
+    for (i=0; i< Products_ddbb.length; i++){
+        if (Products_ddbb[i].includes(letters_to_find.param1)){
+            found.push(Products_ddbb[i]);
+        }
+    }
+
+    console.log("Productos encontrados: " + found)
+
+    //Convertimos el array en un formato JSON
+    var content = JSON.stringify({items_found: found})
+
+    //-- Generar el mensaje de respuesta
+    //-- IMPORTANTE! Hay que indicar que se trata de un objeto JSON
+    //-- en la cabecera Content-Type
+    res.setHeader('Content-Type', 'application/json')
+    res.write(content);
+    res.end();
+    return
+
 
   }else{
     fs.readFile(filename, function(err,data){

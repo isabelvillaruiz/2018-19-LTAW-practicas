@@ -25,13 +25,17 @@
       <a href="gallery.html"  class="but" title="">Gallery</a><div class="but_razd"></div>
 			<a onclick="alertfunction()" href="login"class="but" title=""> LOGIN </a><div class="but_razd"></div>
 			<a href="carrito_compra.html"  class="but" title="">Carrito</a><div class="but_razd"></div>
-			<input id="buscador" type="text" onkeypress="buscar(event)">
-			<input type="submit" name="Buscar" id="Buscar"/>
-			<p id="resultado"></p>
+			<form action = "/redirect">
+				<input id="buscador" type="text" onkeypress="buscar(event)" autocomplete="off">
+				<input type="submit" name="Buscar" id="Buscar"/>
+			</form>
+			<h2 id="resultado"></h2>
     </div>
 </div>
 <!-- header ends -->
 <div class="top">
+
+	<div style="height:30px"></div>
 
 <ul class="round">
 			<li><img src="images/header1.jpg" alt="" width="510" height="320" /></li>
