@@ -78,7 +78,10 @@ http.createServer(function (req, res) {
 
   //-- Se intenta acceder a un recurso que no existe
   //-- Pagina de acceso
-}else if ( filename == "./myform" ) {
+
+
+
+  }else if ( filename == "./myform" ) {
     console.log("HOLA CARACOLA______________________________________________");
 
        if (req.method === 'POST') {
