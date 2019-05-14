@@ -9,6 +9,7 @@
 <title> PAPELERÍA CREATIVA</title>
 <link href='images/ICONO.ico' rel='shortcut icon' type='image/png'/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
+<script src="client_ajax.js"></script>
 </head>
 <body>
 
@@ -24,7 +25,7 @@
       <a href="gallery.html"  class="but" title="">Gallery</a><div class="but_razd"></div>
 			<a onclick="alertfunction()" href="login"class="but" title=""> LOGIN </a><div class="but_razd"></div>
 			<a href="carrito_compra.html"  class="but" title="">Carrito</a><div class="but_razd"></div>
-			<input id="buscador" onkeypress="return buscar(event)">
+			<input id="buscador" type="text" onkeypress="buscar(event)">
 			<input type="submit" name="Buscar" id="Buscar"/>
 			<p id="resultado"></p>
     </div>
