@@ -30,6 +30,7 @@
     <body onload="main();" text-align: center;>
         <ul>
             {% for msg in ord_list %}
+                <br></br>
                 <li>{{ msg.Name}} {{msg.Address}} {{ msg.Mail }} {{ msg.Wishes}}</li>
             {% endfor %}
         </ul>

@@ -10,13 +10,44 @@ Funciona todo
 __________________PRACTICA 2_________________________________________________________________
 
 
+http://localhost:8000
+python manage.py runserver
+
+Comentario: Aunque parece que al rellenar el formulario, no ha funcionado... en el fondo si!
+Si vas a la pestaña "List of Orders" Podras ver todos los formularios (pedidos) realizados y el tuyo
+estará el final del todo! :D
+
+
+En caso de petar, probar:
+python manage.py runserver 127.0.0.1:8080
+
 
 __________________PRACTICA 3_________________________________________________________________
 
 
 
+
+http://localhost:8080/index.html
+node serer.js 
+
+DIOS MIO VA TODO GENIAL!
+
+
 __________________PRACTICA 4_________________________________________________________________
 
+http://localhost:3000/
+node test.js
 
 
 __________________PRACTICA 5_________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+_____________________________________________________________________________________________

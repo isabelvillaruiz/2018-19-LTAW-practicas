@@ -46,7 +46,7 @@ def order_view (request):
             #order_to_save = Order(Name=data['Name'], Address=data['Address'], Mail=data['Mail'], Wishes=data['Wishes'])
             form.save()
 
-            return HttpResponse('<p>Your order has been placed.</p><a href="../">Return to main page</a>')
+            return HttpResponse('<h1>Your order has been placed.</h1><a href="../">Return to main page</a>')
     else:
         form = OrderForm()
         print("Holaa")
