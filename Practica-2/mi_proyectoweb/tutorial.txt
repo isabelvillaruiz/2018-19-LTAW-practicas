@@ -1,0 +1,31 @@
+1º Arrancar python manage.py runserver
+2º Puedo modificar mi tienda
+3º Puedes abrir otro terminal y modificar la base de datos
+4º python manage.py shell
+
+
+  \-- Añadir productos a mi base de datos
+   p1 = Product(name="Epic",character="Diene",stock=1, price=110)
+   p1.save()
+
+  \-- Leer todos los productos
+  productos = Product.objects.all()
+
+  \-- Numero de articulos
+  len(productos)
+
+  \-- Borrar productos base de datos
+  from mi_tienda.models import Product
+   productos = Product.objects.all()
+   len(productos)
+   productos[0].delete()
+   productos[0].save()
+   exit()
+
+  \-- Siempre que añadas o modifiques algo de la base de datos tienes que salir
+  \-- para que dicha base se updatee
+
+   Por un lado cuando metemos cosas para la base de datos te declaras variables que
+   son las p1, p2 ....
+   Las guardas en la base de datos
+Para modificarlas en la base de datos las llamas producto[0].character = "Yufine"
