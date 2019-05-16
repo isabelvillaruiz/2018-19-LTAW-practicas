@@ -4,7 +4,6 @@ var io = require('socket.io')(http);
 
 const express = require('express')
 
-
 var users = 0;
 
 //app.use(express.static('public'));
