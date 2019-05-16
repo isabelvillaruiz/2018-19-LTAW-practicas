@@ -27,8 +27,11 @@ __________________PRACTICA 3____________________________________________________
 
 
 
+
+
+
 http://localhost:8080/index.html
-node serer.js 
+node serer.js
 
 DIOS MIO VA TODO GENIAL!
 
@@ -43,7 +46,7 @@ __________________PRACTICA 5____________________________________________________
 
 
 
-
+Entrar dentro de la carpeta desxcomprimida y dentro ejecutar ./mi_app en mi caso y nada,,,, :D
 
 
 
